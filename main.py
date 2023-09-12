@@ -1,4 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+import uuid
+
 
 app = Flask(__name__)
 
@@ -51,6 +53,18 @@ def get_story(story_id):
     }
 
     return jsonify(data), 200
+
+
+@app.route('/api/stories', methods=['POST'])  # Define the POST endpoint
+def generate_story():
+
+    generated_uuid = str(uuid.uuid4())
+
+    response_data = {
+        "id": generated_uuid,
+    }
+
+    return jsonify(response_data), 200
 
 
 if __name__ == '__main__':
