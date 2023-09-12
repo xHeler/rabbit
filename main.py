@@ -1,4 +1,9 @@
-# Story
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+
+story = """# Story
 
 ## Chapter 1: The Beginning
 
@@ -31,3 +36,21 @@ After a long and perilous journey, Sir Arthur finally reached the dragon's lair.
 ![Battle](https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg)
 
 ---
+
+# The End"""
+
+
+@app.route('/api/stories/<story_id>', methods=['GET'])
+def get_story(story_id):
+    data = {
+        "isImagesGenerated": False,
+        "isTextGenerated": False,
+        "isVoiceGenerated": False,
+        "content": story
+    }
+
+    return jsonify(data), 200
+
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)
