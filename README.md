@@ -30,7 +30,7 @@ python3 main.py
 
 `http://127.0.0.1:8080/api/stories/generate`
 
-## DTO:
+## INPUT: DTO:
 
 ```json
 {
@@ -38,5 +38,13 @@ python3 main.py
   "imagesStyle": "Cinematic",
   "duration": "5",
   "actress": "DiCaprio"
+}
+```
+
+## OUTPUT:
+
+```json
+{
+    "id": "562828d7-79d6-42fa-a6d0-a3f40b655f92"
 }
 ```
