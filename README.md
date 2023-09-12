@@ -9,7 +9,7 @@ python3 main.py
 
 ## ENDPOINTS
 
-# GET /api/stories/<id>
+# GET `/api/stories/id
 
 `http://127.0.0.1:8080/api/stories/cd9cbb86-9535-4a82-a554-5d7b794e7b4e`
 
