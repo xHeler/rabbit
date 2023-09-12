@@ -46,7 +46,8 @@ def get_story(story_id):
         "isImagesGenerated": False,
         "isTextGenerated": False,
         "isVoiceGenerated": False,
-        "content": story
+        "content": story,
+        "voice": 'https://api7.vocalremover.org/split/listen/vocal/80866333/c2a81d'
     }
 
     return jsonify(data), 200
